@@ -18,6 +18,20 @@ void *memcpy(void *dst,
 	return dst;
 }
 
+int memcmp(const void *a,
+           const void *b,
+           size_t count) {
+	const unsigned char *au = (const unsigned char *) a;
+	const unsigned char *bu = (const unsigned char *) b;
+	for (size_t i = 0; i < count; i++) {
+		if (*au != *bu)
+			return *au - *bu;
+		au++;
+		bu++;
+	}
+	return 0;
+}
+
 int strcmp(const char *a,
            const char *b) {
 	const unsigned char *au = (const unsigned char *) a;

@@ -16,6 +16,19 @@
 extern "C" {
 #endif
 
+/// @brief Compares two blocks of memory.
+/// @param a The first block of memory.
+/// @param b The second block of memory.
+/// @param count The number of bytes in
+/// each block of memory.
+/// @returns The difference of @p a
+/// and @p b, at the location they differ.
+/// If they do not differ at all, zero is
+/// returned.
+int memcmp(const void *a,
+           const void *b,
+           size_t count);
+
 /// @brief Copies a portion of memory
 /// from one location to another.
 /// @param dst Pointer to the location
