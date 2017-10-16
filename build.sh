@@ -41,6 +41,7 @@ function link_static {
 
 set -u
 
+compile src/stdio.c src/stdio.o
 compile src/string.c src/string.o
 compile src/baremetal.c src/baremetal.o
-link_static libbaremetal.a src/baremetal.o src/string.o
+link_static libbaremetal.a src/baremetal.o src/string.o src/stdio.o

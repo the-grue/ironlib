@@ -44,6 +44,10 @@ add_header_and_source(SOURCES
 	"baremetal.c")
 
 add_header_and_source(SOURCES
+	"stdio.h"
+	"stdio.c")
+
+add_header_and_source(SOURCES
 	"string.h"
 	"string.c")
 
