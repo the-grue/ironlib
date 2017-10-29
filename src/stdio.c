@@ -9,5 +9,6 @@
 
 int puts(const char *str) {
 	b_output(str);
+	b_output_chars("\n", 1);
 	return 0;
 }
