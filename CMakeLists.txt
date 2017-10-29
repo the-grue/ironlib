@@ -40,6 +40,10 @@ add_header(SOURCES "baremetal/types.h")
 add_header(SOURCES "limits.h")
 
 add_header_and_source(SOURCES
+	"errno.h"
+	"errno.c")
+
+add_header_and_source(SOURCES
 	"baremetal/baremetal.h"
 	"baremetal.c")
 
@@ -57,5 +61,4 @@ if (CMAKE_COMPILER_IS_GNUCC)
 	target_compile_options("baremetal" PRIVATE -Wall -Wextra -Werror -Wfatal-errors)
 endif (CMAKE_COMPILER_IS_GNUCC)
 
-target_include_directories("baremetal" PRIVATE "include")
-target_include_directories("baremetal" INTERFACE "${CMAKE_INSTALL_PREFIX}/include")
+target_include_directories("baremetal" PUBLIC "include")
