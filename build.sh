@@ -8,6 +8,8 @@ fi
 
 if [ "$CC" == "gcc" ]; then
 	CFLAGS="-Wall -Wextra -Werror -Wfatal-errors -Iinclude"
+	CFLAGS="${CFLAGS} -mno-red-zone -fomit-frame-pointer"
+	CFLAGS="${CFLAGS} -nostdlib -nostartfiles -nodefaultlibs"
 fi
 
 if [ "$AR" == "" ]; then
