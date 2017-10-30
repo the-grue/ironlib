@@ -10,6 +10,11 @@
 
 #include <limits.h>
 
+#define INT8_MAX 127
+#define INT8_MIN -128
+
+#define UINT8_MAX 255U
+
 #define INT32_MAX  2147483647L
 #define INT32_MIN -2147483648L
 
@@ -19,6 +24,10 @@
 #define INT64_MIN -9223372036854775808LL
 
 #define UINT64_MAX 18446744073709551615ULL
+
+typedef unsigned char uint8_t;
+
+typedef signed char int8_t;
 
 #if UINT_MAX == UINT32_MAX
 typedef unsigned int uint32_t;
