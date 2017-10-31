@@ -40,6 +40,29 @@
 extern "C" {
 #endif
 
+/// @brief Standard C file structure.
+/// @ingroup baremetal-stdio
+typedef struct baremetal_file FILE;
+
+/// @brief Opens a file for reading or writing.
+/// @param filename The name of the file to open.
+/// @param mode The mode to open the file with.
+/// Currently supported modes are 'r' for reading,
+/// 'w' for writing and 'b' for binary reading and
+/// writing.
+/// @returns If the file was opened properly, then
+/// a pointer to the file structure is returned. Otherwise,
+/// @ref NULL is returned.
+/// @ingroup baremetal-stdio
+FILE *fopen(const char *filename, const char *mode);
+
+/// @brief Closes a file.
+/// @param file A file opened with @ref fopen.
+/// This parameter may be @ref NULL, in which
+/// case the function does nothing.
+/// @ingroup baremetal-stdio
+void fclose(FILE *file);
+
 /// @brief Writes a string to the
 /// default output.
 /// @param str The string to write to
