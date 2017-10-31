@@ -6,10 +6,14 @@ if [ "$CC" == "" ]; then
 	CC=gcc
 fi
 
-if [ "$CC" == "gcc" ]; then
-	CFLAGS="-Wall -Wextra -Werror -Wfatal-errors -std=c99 -Iinclude"
+if [ "$CC" == "gcc" ] || [ "$CC" == "clang" ]; then
+	CFLAGS="-Wall -Wextra -Werror -Wfatal-errors -std=gnu99 -Iinclude"
 	CFLAGS="${CFLAGS} -mno-red-zone -fomit-frame-pointer"
-	CFLAGS="${CFLAGS} -nostdlib -nostartfiles -nodefaultlibs"
+	CFLAGS="${CFLAGS} -nostdlib -nodefaultlibs"
+fi
+
+if [ "$CC" == "clang" ]; then
+	CFLAGS="${CFLAGS} -Wno-incompatible-library-redeclaration"
 fi
 
 if [ "$AR" == "" ]; then
@@ -22,7 +26,7 @@ fi
 
 function compile {
 	echo "CC $1"
-	if [ "$CC" == "gcc" ]; then
+	if [ "$CC" == "gcc" ] || [ "$CC" == "clang" ]; then
 		$CC $CFLAGS -c $1 -o$2
 	fi
 }
