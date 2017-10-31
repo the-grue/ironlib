@@ -7,7 +7,7 @@ if [ "$CC" == "" ]; then
 fi
 
 if [ "$CC" == "gcc" ]; then
-	CFLAGS="-Wall -Wextra -Werror -Wfatal-errors -Iinclude"
+	CFLAGS="-Wall -Wextra -Werror -Wfatal-errors -std=c99 -Iinclude"
 	CFLAGS="${CFLAGS} -mno-red-zone -fomit-frame-pointer"
 	CFLAGS="${CFLAGS} -nostdlib -nostartfiles -nodefaultlibs"
 fi
