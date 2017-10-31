@@ -1,0 +1,8 @@
+language: c
+
+compiler:
+  - gcc
+  - clang
+
+script:
+  - travis-ci/do-all-builds.bash

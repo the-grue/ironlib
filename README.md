@@ -1,6 +1,8 @@
 BareMetal libc
 ==============
 
+[![Build Status](https://travis-ci.org/ReturnInfinity/BareMetal-libc.svg?branch=master)](https://travis-ci.org/ReturnInfinity/BareMetal-libc)
+
 An implementation of the standard C library for BareMetal.
 
 ### Building with CMake
