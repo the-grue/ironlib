@@ -5,6 +5,7 @@ project("BareMetal libc")
 if (CMAKE_C_COMPILER_IS_GNUCC)
 	set (BAREMETAL_C_FLAGS "${BAREMETAL_C_FLAGS} -Wall -Wextra -Werror -Wfatal-errors")
 	set (BAREMETAL_C_FLAGS "${BAREMETAL_C_FLAGS} -nostdlib -nostdinc")
+	set (BAREMETAL_C_FLAGS "${BAREMETAL_C_FLAGS} -mno-red-zone -fomit-frame-pointer")
 endif (CMAKE_C_COMPILER_IS_GNUCC)
 
 find_package(Doxygen)
@@ -39,6 +40,9 @@ unset (SOURCES)
 add_header(SOURCES "baremetal/types.h")
 add_header(SOURCES "limits.h")
 
+add_source(SOURCES "mtable.h")
+add_source(SOURCES "mtable.c")
+
 add_header_and_source(SOURCES
 	"errno.h"
 	"errno.c")
@@ -62,3 +66,9 @@ if (CMAKE_COMPILER_IS_GNUCC)
 endif (CMAKE_COMPILER_IS_GNUCC)
 
 target_include_directories("baremetal" PUBLIC "include")
+
+enable_testing()
+
+add_executable("mtable-test" "src/mtable-test.c")
+target_link_libraries("mtable-test" "baremetal")
+add_test("mtable-test" "mtable-test")
