@@ -32,7 +32,7 @@ function compile {
 }
 
 function generate_limits {
-	$CC -Wall -Wextra -Werror -Wfatal-errors src/generate-limits.c -o src/generate-limits
+	$CC -Wall -Wextra -Werror -Wfatal-errors -std=gnu99 src/generate-limits.c -o src/generate-limits
 	src/generate-limits --output $1
 }
 
