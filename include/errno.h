@@ -37,6 +37,17 @@
 /// @ingroup baremetal-errno
 #define EIO 5
 
+/// @brief Entry that should've been
+/// a file is a directory instead.
+/// @ingroup baremetal-errno
+#define EISDIR 6
+
+/// @brief Bad address. This usually
+/// happens when a caller passes @ref NULL
+/// where they should not.
+/// @ingroup baremetal-errno
+#define EFAULT 7
+
 #ifdef __cplusplus
 extern "C" {
 #endif
