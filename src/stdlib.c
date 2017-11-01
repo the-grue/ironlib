@@ -7,38 +7,25 @@
 
 #include <stdlib.h>
 
+#include <baremetal/baremetal.h>
+
 #ifndef BAREMETAL_PAGE_SIZE
 #define BAREMETAL_PAGE_SIZE (2 * 1024 * 1024)
 #endif
 
-struct mentry {
-	void *addr;
-	size_t page_count;
-};
+void *malloc(size_t size) {
 
-struct mtable {
-	struct mentry *entry_array;
-	size_t entry_count;
-};
-
-struct mtable mtable = {
-	NULL /* entry array */,
-	0 /* entry count */
-};
-
-void *realloc(void *old_addr, size_t size) {
-
-	if (mtable.entry_array = NULL) {
-		b_mem_allocate(&mtable.entry_array, 1);
-		if (mtable.entry_array == NULL)
-			return NULL;
-	}
-
-	if ((mtable.entry_count * sizeof(mtable.entry_array[0])) >= BAREMETAL_PAGE_SIZE)
+	if (size > BAREMETAL_PAGE_SIZE)
 		return NULL;
 
-	for (size_t i = 0; i < mtable.entry_array; i++) {
+	void *addr = NULL;
 
-	}
-	mtable.entry_arr
+	b_mem_allocate(&addr, 1);
+
+	return addr;
+}
+
+void free(void *addr) {
+	if (addr != NULL)
+		b_mem_release(&addr, 1);
 }
