@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.0.2)
 
 project("BareMetal libc")
 
+if (NOT DEFINED BMFS_INCLUDE_DIR)
+	set (BMFS_INCLUDE_DIR "../BMFS/include")
+endif (NOT DEFINED BMFS_INCLUDE_DIR)
+
+include_directories(${BMFS_INCLUDE_DIR})
+
 if (CMAKE_C_COMPILER_IS_GNUCC)
 	set (BAREMETAL_C_FLAGS "${BAREMETAL_C_FLAGS} -Wall -Wextra -Werror -Wfatal-errors")
 	set (BAREMETAL_C_FLAGS "${BAREMETAL_C_FLAGS} -nostdlib -nostdinc")
@@ -60,6 +66,8 @@ add_header_and_source(SOURCES
 	"string.c")
 
 add_library("baremetal" ${SOURCES})
+
+target_link_libraries("baremetal" "bmfs-library")
 
 if (CMAKE_COMPILER_IS_GNUCC)
 	target_compile_options("baremetal" PRIVATE -Wall -Wextra -Werror -Wfatal-errors)
