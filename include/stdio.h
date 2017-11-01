@@ -16,6 +16,8 @@
 #ifndef BAREMETAL_LIBC_STDIO_H
 #define BAREMETAL_LIBC_STDIO_H
 
+#include <baremetal/types.h>
+
 /// @brief An indicator that the end of the
 /// file has been reached.
 /// @ingroup baremetal-stdio
@@ -44,6 +46,9 @@ extern "C" {
 /// @ingroup baremetal-stdio
 typedef struct baremetal_file FILE;
 
+/// @brief The file handle to the standard output.
+extern FILE *stdout;
+
 /// @brief Opens a file for reading or writing.
 /// @param filename The name of the file to open.
 /// @param mode The mode to open the file with.
@@ -62,6 +67,27 @@ FILE *fopen(const char *filename, const char *mode);
 /// case the function does nothing.
 /// @ingroup baremetal-stdio
 void fclose(FILE *file);
+
+/// @brief Check if the end of the file has been
+/// reached.
+/// @returns Zero if the end of file has been reached,
+/// non-zero otherwise.
+/// @ingroup baremetal-stdio
+int feof(FILE *file);
+
+/// @brief Read elements from a file. The elements
+/// may be of any size between one and @ref SIZE_MAX.
+/// @param buf The address of the memory to write the
+/// file data to.
+/// @param element_size The size of each element.
+/// @param element_count The number of elements to read.
+/// @returns The number of elements read.
+/// @ingroup baremetal-stdio
+size_t fread(void *buf, size_t element_size,
+             size_t element_count, FILE *file);
+
+size_t fwrite(const void *buf, size_t element_size,
+              size_t element_count, FILE *file);
 
 /// @brief Writes a string to the
 /// default output.
