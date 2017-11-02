@@ -3,6 +3,6 @@
 $CC $CFLAGS -c puts.c -o puts.o
 $CC $CFLAGS -c stdout.c -o stdout.o
 
-cd baremetal
+cd ${TARGET}
 ./build.sh
 cd ..

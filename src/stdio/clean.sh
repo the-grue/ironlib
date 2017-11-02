@@ -3,6 +3,6 @@
 rm -f puts.o
 rm -f stdout.o
 
-cd baremetal
+cd ${TARGET}
 ./clean.sh
 cd ..

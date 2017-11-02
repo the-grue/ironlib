@@ -1,5 +1,12 @@
 #!/bin/sh
 
+CFLAGS="${CFLAGS} -nostdinc -nodefaultlibs"
+CFLAGS="${CFLAGS} -fomit-frame-pointer -fno-stack-protector"
+CFLAGS="${CFLAGS} -mno-red-zone"
+CFLAGS="${CFLAGS} -I$TOP/include"
+
+export CFLAGS
+
 cd errno
 ./build.sh
 cd ..
