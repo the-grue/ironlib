@@ -7,23 +7,7 @@
 
 #include <stdlib.h>
 
-#include <baremetal/baremetal.h>
-
-#ifndef BAREMETAL_PAGE_SIZE
-#define BAREMETAL_PAGE_SIZE (2 * 1024 * 1024)
-#endif
-
-void *malloc(size_t size) {
-
-	if (size > BAREMETAL_PAGE_SIZE)
-		return NULL;
-
-	void *addr = NULL;
-
-	b_mem_allocate(&addr, 1);
-
-	return addr;
-}
+#include <baremetal/syscalls.h>
 
 void free(void *addr) {
 	if (addr != NULL)

@@ -5,8 +5,8 @@
 // Version 1.0
 // =======================================================================
 
-#ifndef BAREMETAL_BAREMETAL_H
-#define BAREMETAL_BAREMETAL_H
+#ifndef IRONLIB_BAREMETAL_SYSCALLS_H
+#define IRONLIB_BAREMETAL_SYSCALLS_H
 
 // Output
 void b_output(const char *str);
@@ -58,4 +58,4 @@ void b_system_misc(unsigned long function, void *var1, void *var2);
 #define SMP_NUMCORES     9
 #define RESET            256
 
-#endif // BAREMETAL_BAREMETAL_H
+#endif // IRONLIB_BAREMETAL_SYSCALLS_H

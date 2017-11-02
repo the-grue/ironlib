@@ -6,7 +6,7 @@
 *.o
 *.a
 *.so
-/src/generate-limits
+/utils/generate-limits
 /include/limits.h
 # Common artifact extensions on Windows
 *.obj

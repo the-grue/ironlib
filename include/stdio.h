@@ -44,7 +44,7 @@ extern "C" {
 
 /// @brief Standard C file structure.
 /// @ingroup baremetal-stdio
-typedef struct baremetal_file FILE;
+typedef struct ironlib_file FILE;
 
 /// @brief The file handle to the standard output.
 extern FILE *stdout;

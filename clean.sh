@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-set -e
+export TARGET=baremetal
 
-rm -f src/string.o src/baremetal.o
-rm -f libbaremetal.a
+cd utils
+./clean.sh
+cd ..
+
+rm -f include/limits.h
+
+cd src
+./clean.sh
+cd ..
