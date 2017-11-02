@@ -1,10 +1,10 @@
 #!/bin/sh
 
+set -e
+set -u
+
 export TOP="$PWD"
-
-export TARGET=baremetal
-export TARGET=fake
-
+export TARGET
 export CFLAGS="-Wall -Wextra"
 
 cd utils

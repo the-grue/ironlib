@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -e
+set -u
+
 CFLAGS="${CFLAGS} -nostdinc -nodefaultlibs"
 CFLAGS="${CFLAGS} -fomit-frame-pointer -fno-stack-protector"
 CFLAGS="${CFLAGS} -mno-red-zone"
@@ -26,6 +29,7 @@ cd ..
 AR=ar
 ARFLAGS=rcs
 
+OBJECTFILES=
 OBJECTFILES="${OBJECTFILES} stdio/puts.o"
 OBJECTFILES="${OBJECTFILES} stdio/stdout.o"
 OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/fopen.o"
