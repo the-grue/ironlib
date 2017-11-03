@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd ${TARGET}
+cd baremetal
 ./build.sh
 cd ..

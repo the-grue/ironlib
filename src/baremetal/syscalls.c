@@ -5,7 +5,7 @@
 // Version 1.0
 // =======================================================================
 
-#include <baremetal/baremetal.h>
+#include <baremetal/syscalls.h>
 
 void b_output(const char *str) {
 	asm volatile ("call *0x00100010" : : "S"(str)); // Make sure source register (RSI) has the string address (str)

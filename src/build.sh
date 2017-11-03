@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -e
-set -u
 
 CFLAGS="${CFLAGS} -nostdinc -nodefaultlibs"
 CFLAGS="${CFLAGS} -fomit-frame-pointer -fno-stack-protector"
@@ -9,6 +8,10 @@ CFLAGS="${CFLAGS} -mno-red-zone"
 CFLAGS="${CFLAGS} -I$TOP/include"
 
 export CFLAGS
+
+cd baremetal
+./build.sh
+cd ..
 
 cd errno
 ./build.sh
@@ -32,13 +35,13 @@ ARFLAGS=rcs
 OBJECTFILES=
 OBJECTFILES="${OBJECTFILES} stdio/puts.o"
 OBJECTFILES="${OBJECTFILES} stdio/stdout.o"
-OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/fopen.o"
-OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/fclose.o"
-OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/feof.o"
-OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/fread.o"
-OBJECTFILES="${OBJECTFILES} stdio/${TARGET}/fwrite.o"
-OBJECTFILES="${OBJECTFILES} stdlib/${TARGET}/malloc.o"
-OBJECTFILES="${OBJECTFILES} stdlib/${TARGET}/free.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/fopen.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/fclose.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/feof.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/fread.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/fwrite.o"
+OBJECTFILES="${OBJECTFILES} stdlib/baremetal/malloc.o"
+OBJECTFILES="${OBJECTFILES} stdlib/baremetal/free.o"
 OBJECTFILES="${OBJECTFILES} string/memcmp.o"
 OBJECTFILES="${OBJECTFILES} string/memcpy.o"
 OBJECTFILES="${OBJECTFILES} string/strcmp.o"

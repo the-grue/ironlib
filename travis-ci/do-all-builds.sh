@@ -3,7 +3,7 @@
 set -u
 set -e
 
-export TARGET=fake
+export IRONLIB_FAKE=-fake
 
 travis-ci/do-bash-build.sh
 travis-ci/do-dash-build.sh
