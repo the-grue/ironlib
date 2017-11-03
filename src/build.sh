@@ -44,4 +44,4 @@ OBJECTFILES="${OBJECTFILES} string/memcpy.o"
 OBJECTFILES="${OBJECTFILES} string/strcmp.o"
 OBJECTFILES="${OBJECTFILES} string/strlen.o"
 
-$AR $ARFLAGS libc.a ${OBJECTFILES}
+$AR $ARFLAGS ../libc.a ${OBJECTFILES}
