@@ -1,5 +1,11 @@
 language: c
 
+addons:
+  apt:
+    packages:
+    - zsh
+    - dash
+
 compiler:
   - gcc
   - clang
