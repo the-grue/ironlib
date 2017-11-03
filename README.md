@@ -34,15 +34,21 @@ sudo apt install doxygen
 sudo apt install graphviz
 ```
 
-### Building with Bash
+### Building with the Shell
 
-To build with Bash, use the `build.sh` and `clean.sh` scripts.
+Officially supported shells are:
+
+ - bash
+ - zsh
+ - dash
+
+To build using the shell scripts, use `build.sh` and `clean.sh`
 
 ```
 ./build.sh
 ```
 
-The file `libbaremetal.a` will be generated in the project root directory.
+The file `libc.a` will be generated in the project root directory.
 
 To remove all generated files, use the `clean.sh` script.
 
