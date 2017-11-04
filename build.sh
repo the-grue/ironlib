@@ -3,6 +3,8 @@
 set -e
 
 export TOP="$PWD"
+
+export CC="gcc"
 export CFLAGS="-Wall -Wextra"
 
 cd utils
