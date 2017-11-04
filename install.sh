@@ -5,7 +5,9 @@ mkdir -p $DESTDIR$PREFIX/include
 
 cp libc.a $DESTDIR$PREFIX/lib/
 
-cp include/errno.h \
+cp include/baremetal/types.h \
+   include/baremetal/syscalls.h \
+   include/errno.h \
    include/limits.h \
    include/stdio.h \
    include/stdlib.h \
