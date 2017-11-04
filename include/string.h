@@ -65,6 +65,18 @@ void *memset(void *dst,
 int strcmp(const char *a,
            const char *b);
 
+/// @brief Copies the contents of one
+/// string to another.
+/// @param dst Where the content will
+/// be copied to. This string will be
+/// null-terminated.
+/// @param src The string containing the
+/// content to copy. This string must be
+/// null-terminated.
+/// @returns A pointer to @p dst.
+char *strcpy(char *dst,
+             const char *src);
+
 /// @brief Determines the length of a string.
 /// @param str A null-terminated string.
 /// @returns The length of the string, not
