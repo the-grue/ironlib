@@ -41,6 +41,19 @@ void *memcpy(void *dst,
              const void *src,
              size_t count);
 
+/// @brief Sets the contents of a memory
+/// block to a specified value.
+/// @param dst The address of the memory block.
+/// @param value The value to set each byte in
+/// the memory block. Internally, this is casted
+/// to an unsigned, eight-bit type.
+/// @param size The number of bytes in the block
+/// of memory.
+/// @returns A pointer to @p dst.
+void *memset(void *dst,
+             int value,
+             size_t size);
+
 /// @brief Compares two null-terminated
 /// byte strings in lexical order.
 /// @param a A null-terminated string.
