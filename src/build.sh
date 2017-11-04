@@ -33,6 +33,7 @@ AR=ar
 ARFLAGS=rcs
 
 OBJECTFILES=
+OBJECTFILES="${OBJECTFILES} baremetal/syscalls.o"
 OBJECTFILES="${OBJECTFILES} stdio/puts.o"
 OBJECTFILES="${OBJECTFILES} stdio/stdout.o"
 OBJECTFILES="${OBJECTFILES} stdio/baremetal/fopen.o"
