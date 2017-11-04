@@ -2,12 +2,15 @@
 
 mkdir -p $DESTDIR$PREFIX/lib
 mkdir -p $DESTDIR$PREFIX/include
+mkdir -p $DESTDIR$PREFIX/include/baremetal
 
 cp libc.a $DESTDIR$PREFIX/lib/
 
 cp include/baremetal/types.h \
    include/baremetal/syscalls.h \
-   include/errno.h \
+   $DESTDIR$PREFIX/include/baremetal
+
+cp include/errno.h \
    include/limits.h \
    include/stdio.h \
    include/stdlib.h \
