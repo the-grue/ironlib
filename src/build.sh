@@ -44,6 +44,7 @@ OBJECTFILES="${OBJECTFILES} stdlib/baremetal/malloc.o"
 OBJECTFILES="${OBJECTFILES} stdlib/baremetal/free.o"
 OBJECTFILES="${OBJECTFILES} string/memcmp.o"
 OBJECTFILES="${OBJECTFILES} string/memcpy.o"
+OBJECTFILES="${OBJECTFILES} string/memset.o"
 OBJECTFILES="${OBJECTFILES} string/strcmp.o"
 OBJECTFILES="${OBJECTFILES} string/strlen.o"
 
