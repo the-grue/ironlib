@@ -34,8 +34,10 @@ ARFLAGS=rcs
 
 OBJECTFILES=
 OBJECTFILES="${OBJECTFILES} baremetal/syscalls.o"
+OBJECTFILES="${OBJECTFILES} errno/errno.o"
 OBJECTFILES="${OBJECTFILES} stdio/puts.o"
 OBJECTFILES="${OBJECTFILES} stdio/stdout.o"
+OBJECTFILES="${OBJECTFILES} stdio/baremetal/disk.o"
 OBJECTFILES="${OBJECTFILES} stdio/baremetal/fopen.o"
 OBJECTFILES="${OBJECTFILES} stdio/baremetal/fclose.o"
 OBJECTFILES="${OBJECTFILES} stdio/baremetal/feof.o"
