@@ -2,7 +2,7 @@
 
 set -e
 
-CFLAGS="${CFLAGS} -std=gnu99 -nostdinc -nodefaultlibs"
+CFLAGS="${CFLAGS} -std=gnu99 -g -nostdinc -nodefaultlibs"
 CFLAGS="${CFLAGS} -fomit-frame-pointer -fno-stack-protector"
 CFLAGS="${CFLAGS} -mno-red-zone"
 CFLAGS="${CFLAGS} -I$TOP/include"
