@@ -48,6 +48,11 @@
 /// @ingroup baremetal-errno
 #define EFAULT 7
 
+/// @brief There is no more space available
+/// on the storage medium.
+/// @ingroup baremetal-errno
+#define ENOSPC 8
+
 #ifdef __cplusplus
 extern "C" {
 #endif
