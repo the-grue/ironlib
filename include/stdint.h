@@ -15,6 +15,11 @@
 
 #define UINT8_MAX 255U
 
+#define INT16_MAX 32767
+#define INT16_MIN -32768
+
+#define UINT16_MAX 65535U
+
 #define INT32_MAX  2147483647L
 #define INT32_MIN -2147483648L
 
@@ -28,6 +33,14 @@
 typedef unsigned char uint8_t;
 
 typedef signed char int8_t;
+
+#if USHRT_MAX == UINT16_MAX
+typedef unsigned short int uint16_t;
+#endif
+
+#if SHRT_MAX == INT16_MAX
+typedef short int int16_t;
+#endif
 
 #if UINT_MAX == UINT32_MAX
 typedef unsigned int uint32_t;
