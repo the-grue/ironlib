@@ -5,6 +5,17 @@ include $(TOP)/make/patterns.mk
 CC ?= gcc
 CFLAGS := $(CFLAGS) -Wall -Wextra -Werror -Wfatal-errors
 CFLAGS := $(CFLAGS) -I $(TOP)/include
+CFLAGS := $(CFLAGS) -nodefaultlibs
+
+# This should be enabled again, once
+# BMFS does not rely on standard library
+# headers.
+# CFLAGS := $(CFLAGS) -nostdinc
+
+ifdef BAREMETAL_OS
+CFLAGS := $(CFLAGS) -I ../../../output/include
+CFLAGS := $(CFLAGS) -fno-stack-protector -fomit-frame-pointer -mno-red-zone
+endif
 
 libfiles += errno/errno.o
 libfiles += stdio/puts.o
@@ -12,10 +23,11 @@ libfiles += stdio/stdout.o
 libfiles += string/memcpy.o
 libfiles += string/memcmp.o
 libfiles += string/memset.o
+libfiles += string/strcmp.o
 libfiles += string/strcpy.o
 libfiles += string/strlen.o
 
-ifdef IRONLIB_WITH_BAREMETAL
+ifdef BAREMETAL_OS
 libfiles += baremetal/syscalls.o
 libfiles += stdio/baremetal/disk.o
 libfiles += stdio/baremetal/fclose.o

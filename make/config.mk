@@ -23,7 +23,7 @@ PREFIX ?= /usr/local
 #   disabled by default.
 VALGRIND ?=
 
-# BMFS_RELEASE:
+# IRONLIB_RELEASE:
 #   If this variable defined, compiler optimizations
 #   are enabled when compiling the library and programs.
 IRONLIB_RELEASE ?=
