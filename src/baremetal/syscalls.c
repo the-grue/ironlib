@@ -80,3 +80,23 @@ void b_system_misc(unsigned long function, void* var1, void* var2) {
 	asm volatile ("call *0x00100068" : : "d"(function), "a"(var1), "c"(var2));
 }
 
+unsigned short b_pci_read(unsigned char bus,
+                          unsigned char device,
+                          unsigned char function,
+                          unsigned char offset) {
+	unsigned short output = 0xffff;
+	asm volatile ("xor %%rdi, %%rdi\n"
+	              "xor %%rsi, %%rsi\n"
+	              "xor %%rdx, %%rdx\n"
+	              "xor %%rcx, %%rcx\n"
+	              "movb %1, %%dil\n"
+	              "movb %2, %%sil\n"
+	              "movb %3, %%dl\n"
+	              "movb %4, %%cl\n"
+	              "call *0x00100070\n"
+	              "movw %%ax, %0\n"
+	              : "=m"(output)
+	              : "m"(bus), "m"(device), "m"(function), "m"(offset)
+	              : "rdi", "rsi", "rdx", "rcx");
+	return output;
+}
