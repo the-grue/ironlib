@@ -34,10 +34,10 @@ unsigned long b_system_config(unsigned long function, unsigned long var);
 void b_system_misc(unsigned long function, void *var1, void *var2);
 
 // PCI
-unsigned short int b_pci_read(unsigned char bus,
-                              unsigned char device,
-                              unsigned char function,
-                              unsigned char offset);
+unsigned short int b_pci_read_config(unsigned char bus,
+                                     unsigned char device,
+                                     unsigned char function,
+                                     unsigned char offset);
 
 // Index for b_system_config calls
 #define TIMECOUNTER          0
