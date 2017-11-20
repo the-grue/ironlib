@@ -18,6 +18,13 @@ CFLAGS := $(CFLAGS) -fno-stack-protector -fomit-frame-pointer -mno-red-zone
 endif
 
 libfiles += errno/errno.o
+libfiles += ironlib/stream/init.o
+libfiles += ironlib/stream/printf.o
+libfiles += ironlib/stream/read.o
+libfiles += ironlib/stream/vprintf.o
+libfiles += ironlib/stream/write.o
+libfiles += ironlib/sstream/init.o
+libfiles += ironlib/sstream/set-buf.o
 libfiles += stdio/puts.o
 libfiles += stdio/stdout.o
 libfiles += string/memcpy.o
