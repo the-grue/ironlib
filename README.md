@@ -5,6 +5,8 @@ ironlib
 
 The standard C library for BareMetal.
 
+Note: This project has since been deprecated and replaced by newlib.
+
 ### Building with CMake
 
 The primary build is CMake.
